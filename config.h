@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* Constants */
-#define TERMINAL "st"
+#define TERMINAL "kitty"
 #define TERMCLASS "St"
 
 /* appearance */
@@ -72,7 +72,7 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 //launches htop
 static const char *monitor[] = { "/usr/bin/htop", NULL };
 //sets st as the default terminal
-static const char *termcmd[]  = { "st", NULL };
+static const char *termcmd[]  = { "kitty", NULL };
 //sets file manger
 static const char *filemanager[] = {"ranger", NULL};
 //sets web broswer
@@ -100,7 +100,7 @@ static Key keys[] = {
     { MODKEY,                       XK_c,      spawn,          SHCMD("code")},
     { MODKEY,                       XK_p,      spawn,          SHCMD(TERMINAL " -e cmus")},
     { MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD(TERMINAL " -e nmtui")},
-    { MODKEY,                       XK_o,      spawn,          SHCMD("killall spotifyd ; spotifyd && st -e spt")},
+    { MODKEY,                       XK_o,      spawn,          SHCMD("killall spotifyd ; spotifyd && kitty -e spt")},
 	{ MODKEY,                       XK_t,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = -1 } },
     { MODKEY,                       XK_k,      focusstack,     {.i = +1 } },
