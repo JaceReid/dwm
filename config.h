@@ -10,8 +10,8 @@ static const unsigned int gappx     = 5;        /* gaps size between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10", "fontawesome:size=10" };
-static const char dmenufont[]       = "monospace:size=11";
+static const char *fonts[]          = { "hack:size=10", "fontawesome:size=10" };
+static const char dmenufont[]       = "hack:size=11";
 //background color
 static const char col_gray1[]       = "#2E3440";
 //inactive window border color
@@ -128,9 +128,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,              		    XK_n,      shiftview,  	   { .i = +1 } },
 	{ MODKEY,              		    XK_b,      shiftview,      { .i = -1 } },
-    { MODKEY,                       XK_F10,     spawn,         SHCMD("amixer -q set Master 5%+ unmute")},
-    { MODKEY,                       XK_F9,     spawn,          SHCMD("amixer -q set Master 5%- unmute") },
-    { MODKEY,                       XK_F8,     spawn,          SHCMD("amixer -q set Master toggle") },
+    { MODKEY,                       XK_F10,     spawn,         SHCMD("amixer -q set Speaker 5%+ unmute")},
+    { MODKEY,                       XK_F9,     spawn,          SHCMD("amixer -q set Speaker 5%- unmute") },
+    { MODKEY,                       XK_F8,     spawn,          SHCMD("amixer -q set Speaker toggle") },
     { MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("scrot -q 90 ~/Pictures/Screenshots/screenshot-$(date + \"%y-%m-%d-%T\").png") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
