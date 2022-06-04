@@ -11,3 +11,11 @@ Same as DWM, simply clone this repo cd in the directory and build it with `sudo 
 <p align="center">
   <img src="Github/dwm.png" alt="Screenshot"
 </p>
+
+## Dependences/Default apps
+
+### There are quite a few dependences in my build of dwm, I can't list them all but here are a few:
+
+* My [slstatus build](https://github.com/JaceReid/slstatus) build
+* Ranger
+* Kitty
