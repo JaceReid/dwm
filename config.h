@@ -97,7 +97,7 @@ static Key keys[] = {
     { MODKEY,                       XK_m,      spawn,          SHCMD(TERMINAL " -e htop") },
     { MODKEY,                       XK_a,      spawn,          SHCMD(TERMINAL " nvim -c VimwikiIndex") },
     { MODKEY,                       XK_w,      spawn,          SHCMD("firefox")},
-    { MODKEY,                       XK_c,      spawn,          SHCMD("code")},
+    { MODKEY,                       XK_c,      spawn,          SHCMD("passmenu -m 0 -fn \"Hack Nerd Font:size=11\" -nb \"#2E3440\" -nf \"#bbbbbb\" -sb \"#A3BE8C\" -sf \"#2E3440\"")},
     { MODKEY,                       XK_p,      spawn,          SHCMD(TERMINAL " -e cmus")},
     { MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD(TERMINAL " -e nmtui")},
     { MODKEY,                       XK_o,      spawn,          SHCMD("killall spotifyd ; spotifyd && kitty -e spt")},
@@ -131,7 +131,7 @@ static Key keys[] = {
     { MODKEY,                       XK_F10,     spawn,         SHCMD("amixer -q set Speaker 5%+ unmute")},
     { MODKEY,                       XK_F9,     spawn,          SHCMD("amixer -q set Speaker 5%- unmute") },
     { MODKEY,                       XK_F8,     spawn,          SHCMD("amixer -q set Speaker toggle") },
-    { MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("scrot -q 90 ~/Pictures/Screenshots/screenshot-$(date + \"%y-%m-%d-%T\").png") },
+    { MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("scrot -q 90 ~/pix/ss/screenshot-$(date + \"%y-%m-%d-%T\").png") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
