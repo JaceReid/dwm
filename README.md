@@ -2,7 +2,7 @@
 This is my minimal daily driver build of dwm. I have added some extra futures such as full screen mode and Gaps. 
 
 ## Key bindings
-This can be found in the config.h file
+This can be found in the config.h file.
 
 ## Installation
 Same as DWM, simply clone this repo cd in the directory and build it with `sudo make clean install`.
@@ -19,3 +19,4 @@ Same as DWM, simply clone this repo cd in the directory and build it with `sudo 
 * My [slstatus build](https://github.com/JaceReid/slstatus) build
 * Ranger
 * Kitty
+* A Nerd font
