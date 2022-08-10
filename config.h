@@ -10,9 +10,10 @@ static const unsigned int gappx     = 5;        /* gaps size between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = {"Hack Nerd Font:size=10","SauceCodePro Nerd Font:size=10"};
-static const char dmenufont[]       = "Hack Nerd Font:size=11";
-//background color
+static const int user_bh            = 12;        /* 0 means that dwm will calculate bar height, >= 1 means dwm will user_bh as bar height */
+static const char *fonts[]          = {"Hack Nerd Font:size=9","SauceCodePro Nerd Font:size=10"};
+static const char dmenufont[]       = "Hack Nerd Font:size=10";
+//background color (old color: 2E3440)
 static const char col_gray1[]       = "#2E3440";
 //inactive window border color
 static const char col_gray2[]       = "#444444";
@@ -20,7 +21,7 @@ static const char col_gray2[]       = "#444444";
 static const char col_gray3[]       = "#bbbbbb";
 //current tag and current window font color
 static const char col_gray4[]       = "#2E3440";
-//Top bar second color (blue) and active window border color
+//Top bar second color (blue) and active window border color DCA56A
 static const char col_cyan[]        = "#A3BE8C";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
@@ -96,7 +97,13 @@ static Key keys[] = {
     { MODKEY,                       XK_r,      spawn,          SHCMD(TERMINAL " -e ranger") },
     { MODKEY,                       XK_m,      spawn,          SHCMD(TERMINAL " -e htop") },
     { MODKEY,                       XK_a,      spawn,          SHCMD(TERMINAL " nvim -c VimwikiIndex") },
+    { MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("surf ~/vimwiki/html/index.html") },
+    { MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD(" - e cava") },
+    { MODKEY,                       XK_e,      spawn,          SHCMD(TERMINAL " -e pulsemixer") },
     { MODKEY,                       XK_w,      spawn,          SHCMD("firefox")},
+    { MODKEY,                       XK_v,      spawn,          SHCMD("virt-manager")},
+    { MODKEY|ShiftMask,             XK_c,      spawn,          SHCMD("cava")},
+    { MODKEY,                       XK_s,      spawn,          SHCMD("slock & loginctl suspend")},
     { MODKEY,                       XK_c,      spawn,          SHCMD("passmenu -m 0 -fn \"Hack Nerd Font:size=11\" -nb \"#2E3440\" -nf \"#bbbbbb\" -sb \"#A3BE8C\" -sf \"#2E3440\"")},
     { MODKEY,                       XK_p,      spawn,          SHCMD(TERMINAL " -e cmus")},
     { MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD(TERMINAL " -e nmtui")},
