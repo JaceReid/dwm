@@ -31,7 +31,7 @@ static const char *colors[][3]      = {
 
 /* tagging */
 //tag names (upper left)
-static const char *tags[] = { "", "2", "3", "4", "5",  "6", "7", "8", "9" };
+static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -69,23 +69,16 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-//static const char *filemanager[] = { "
-//launches htop
-static const char *monitor[] = { "/usr/bin/htop", NULL };
 //sets st as the default terminal
 static const char *termcmd[]  = { "kitty", NULL };
-//sets file manger
-static const char *filemanager[] = {"ranger", NULL};
-//sets web broswer
-static const char *web[] = {"firefox", NULL};
 
 //volume controls
 //static const char *upvol[]   = { "amixer", "-q", "set", "Master", "5%+", "unmute", NULL };
 //static const char *downvol[] = { "amixer", "-q", "set", "Master", "5%-", "unmute", NULL };
 //static const char *mutevol[] = { "amixer", "-q", "set", "Master", "toggle", NULL };
-static const char *upvol[]   = { "~/scripts/volumeup.sh", NULL };
-static const char *downvol[] = { "amixer -q set Master 5%%- unmute", NULL };
-static const char *mutevol[] = { "amixer -q set Master toggle", NULL };
+//static const char *upvol[]   = { "~/scripts/volumeup.sh", NULL };
+//static const char *downvol[] = { "amixer -q set Master 5%%- unmute", NULL };
+//static const char *mutevol[] = { "amixer -q set Master toggle", NULL };
 
 
 #include "shiftview.c"
@@ -97,17 +90,20 @@ static Key keys[] = {
     { MODKEY,                       XK_r,      spawn,          SHCMD(TERMINAL " -e ranger") },
     { MODKEY,                       XK_m,      spawn,          SHCMD(TERMINAL " -e htop") },
     { MODKEY,                       XK_a,      spawn,          SHCMD(TERMINAL " nvim -c VimwikiIndex") },
+    { MODKEY,                       XK_o,      spawn,          SHCMD(TERMINAL " nvim -c \"Calendar -view=week\"") },
     { MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("surf ~/vimwiki/html/index.html") },
-    { MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD(" - e cava") },
+    //{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD(" - e cava") },
     { MODKEY,                       XK_e,      spawn,          SHCMD(TERMINAL " -e pulsemixer") },
     { MODKEY,                       XK_w,      spawn,          SHCMD("firefox")},
+    { MODKEY,                       XK_x,      spawn,          SHCMD("xournalpp")},
     { MODKEY,                       XK_v,      spawn,          SHCMD("virt-manager")},
     { MODKEY|ShiftMask,             XK_c,      spawn,          SHCMD("cava")},
+    { MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD(TERMINAL " -e curl wttr.in")},
     { MODKEY,                       XK_s,      spawn,          SHCMD("slock & loginctl suspend")},
     { MODKEY,                       XK_c,      spawn,          SHCMD("passmenu -m 0 -fn \"Hack Nerd Font:size=11\" -nb \"#2E3440\" -nf \"#bbbbbb\" -sb \"#A3BE8C\" -sf \"#2E3440\"")},
     { MODKEY,                       XK_p,      spawn,          SHCMD(TERMINAL " -e cmus")},
     { MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD(TERMINAL " -e nmtui")},
-    { MODKEY,                       XK_o,      spawn,          SHCMD("killall spotifyd ; spotifyd && kitty -e spt")},
+    //{ MODKEY,                       XK_o,      spawn,          SHCMD("killall spotifyd ; spotifyd && kitty -e spt")},
 	{ MODKEY,                       XK_t,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = -1 } },
     { MODKEY,                       XK_k,      focusstack,     {.i = +1 } },
@@ -135,9 +131,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,              		    XK_n,      shiftview,  	   { .i = +1 } },
 	{ MODKEY,              		    XK_b,      shiftview,      { .i = -1 } },
-    { MODKEY,                       XK_F10,     spawn,         SHCMD("amixer -q set Speaker 5%+ unmute")},
-    { MODKEY,                       XK_F9,     spawn,          SHCMD("amixer -q set Speaker 5%- unmute") },
-    { MODKEY,                       XK_F8,     spawn,          SHCMD("amixer -q set Speaker toggle") },
+    { MODKEY,                       XK_F10,     spawn,         SHCMD("pulsemixer --change-volume +5")},
+    { MODKEY,                       XK_F9,     spawn,          SHCMD("pulsemixer --change-volume -5") },
+    { MODKEY,                       XK_F8,     spawn,          SHCMD("pulsemixer --toggle-mute") },
     { MODKEY|ShiftMask,             XK_p,      spawn,          SHCMD("scrot -q 90 ~/pix/ss/screenshot-$(date + \"%y-%m-%d-%T\").png") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
