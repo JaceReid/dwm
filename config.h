@@ -31,7 +31,7 @@ static const char *colors[][3]      = {
 
 /* tagging */
 //tag names (upper left)
-static const char *tags[] = { "", "", "", "", "", "", "", "", "" };
+static const char *tags[] = { "", "", "", "", "", "", "", "󰀂", "" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -92,18 +92,17 @@ static Key keys[] = {
     { MODKEY,                       XK_a,      spawn,          SHCMD(TERMINAL " nvim -c VimwikiIndex") },
     { MODKEY,                       XK_o,      spawn,          SHCMD(TERMINAL " nvim -c \"Calendar -view=week\"") },
     { MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD("surf ~/vimwiki/html/index.html") },
-    //{ MODKEY|ShiftMask,             XK_a,      spawn,          SHCMD(" - e cava") },
+    //{ MODKEY|ShiftMask,             XK_r,      spawn,          SHCMD("ffmpeg -f x11grab -y -framerate 30 -s 1366x768 -i :0.0 -c:v libx264 -preset superfast -crf 18 ~/vids/vid-$(date +"%d-%m-%Y").mp4") },
     { MODKEY,                       XK_e,      spawn,          SHCMD(TERMINAL " -e pulsemixer") },
     { MODKEY,                       XK_w,      spawn,          SHCMD("firefox")},
     { MODKEY,                       XK_x,      spawn,          SHCMD("xournalpp")},
     { MODKEY,                       XK_v,      spawn,          SHCMD("virt-manager")},
-    { MODKEY|ShiftMask,             XK_c,      spawn,          SHCMD("cava")},
     { MODKEY|ShiftMask,             XK_w,      spawn,          SHCMD(TERMINAL " -e curl wttr.in")},
     { MODKEY,                       XK_s,      spawn,          SHCMD("slock & loginctl suspend")},
     { MODKEY,                       XK_c,      spawn,          SHCMD("passmenu -m 0 -fn \"Hack Nerd Font:size=11\" -nb \"#2E3440\" -nf \"#bbbbbb\" -sb \"#A3BE8C\" -sf \"#2E3440\"")},
     { MODKEY,                       XK_p,      spawn,          SHCMD(TERMINAL " -e cmus")},
     { MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD(TERMINAL " -e nmtui")},
-    //{ MODKEY,                       XK_o,      spawn,          SHCMD("killall spotifyd ; spotifyd && kitty -e spt")},
+    { MODKEY,                       XK_i,      spawn,          SHCMD("killall spotifyd; spotifyd --no-daemon & kitty -e spt")},
 	{ MODKEY,                       XK_t,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = -1 } },
     { MODKEY,                       XK_k,      focusstack,     {.i = +1 } },
